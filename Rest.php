@@ -14,11 +14,11 @@
 class Rest {
     
     // For this to work, we assume that the JSON reply will be:
-    // {status = statusCode, message = replyMessage, data = resultObject}
+    // {status = statusCode, hasData = true/false, data = resultObject}
     
     private $response;
     private $status;
-    private $message;
+    private $hasData;
     private $data;
 
     public function __construct($url) {
@@ -26,7 +26,7 @@ class Rest {
         curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
         $this->response = json_decode(curl_exec($client));
         $this->status = $this->response->status;
-        $this->message = $this->response->message;
+        $this->hasData = $this->response->hasData;
         $this->data = $this->response->data;
     }
     
@@ -40,8 +40,8 @@ class Rest {
         return $this->status;
     }
 
-    function getMessage() {
-        return $this->message;
+    function getHasData() {
+        return $this->hasData;
     }
 
     function getData() {
@@ -56,8 +56,8 @@ class Rest {
         $this->status = $status;
     }
 
-    function setMessage($message) {
-        $this->message = $message;
+    function setHasData($hasData) {
+        $this->hasData = $hasData;
     }
 
     function setData($data) {

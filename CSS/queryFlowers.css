@@ -1,0 +1,119 @@
+
+/* 
+    Created on : Aug 20, 2020, 4:21:10 PM
+    Author     : Johann Lee Jia Xuan
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+body {
+  background-color: #866aeb;
+  font-family: 'Alata';
+  text-align: center;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  margin: auto;
+  width: 100%;
+  height: 50%;
+
+}
+
+h1 {
+  color: white;
+  font-size: 40px;
+  line-height: 0.5;
+}
+
+h2 {
+  color: black;
+  opacity: 0.5;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.filter {
+  position: relative;
+  background-color: #c2a8ed;
+  padding: 10px;
+  border-radius: 10px;
+  margin: auto;
+  width: 70%;
+
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox]:checked+label {
+
+  opacity: 1;
+
+}
+
+input[type=checkbox]:hover+label {
+  opacity: 1;
+}
+
+input[type=submit] {
+  margin-top: 20px;
+  background-color: white;
+  font-weight: 600;
+  color: #866aeb;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+
+  display: inline-block;
+  font-size: 20px;
+}
+
+input[type=submit]:hover {
+  background-color: lightsteelblue;
+}
+
+input[type=range]{
+  width: 500px;  
+}
+
+.field {
+  margin: 10px;
+  display: inline-block;
+}
+
+label {
+  transition: 0.2s;
+  opacity: 0.5;
+  font-size: 20px;
+  background-color: #866aeb;
+
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.slider {
+  display: inline-block;
+  color: #6d4be7;
+  font-weight: 600;
+}
+
+
+
+
+
+.hide {
+  display: none;
+}
+
