@@ -75,11 +75,13 @@ input[type=submit] {
 
   display: inline-block;
   font-size: 20px;
+  transition: 0.2s;
 }
 
-input[type=submit]:hover {
-  background-color: lightsteelblue;
+.hoverableButton:hover {
+  background-color: #c2a8ed;
 }
+
 
 input[type=range]{
   width: 500px;  
@@ -116,4 +118,5 @@ label {
 .hide {
   display: none;
 }
+
 

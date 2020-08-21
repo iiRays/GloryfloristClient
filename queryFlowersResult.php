@@ -30,7 +30,7 @@ and open the template in the editor.
 
             if ($minVal && $minChecked) {
                 $queryCount++;
-                $query .= "minPrice=" . ($minVal * 50);
+                $query .= "minPrice=" . ($minVal * 10);
             }
 
 
@@ -41,7 +41,7 @@ and open the template in the editor.
                 }
 
                 $queryCount++;
-                $query .= "maxPrice=" . ($maxVal * 50);
+                $query .= "maxPrice=" . ($maxVal * 10);
             }
             $rest = new Rest("http://localhost/GloryFlorist/Controllers/WebServices/queryArrangements.php?" . $query);
 

@@ -4,8 +4,8 @@
 
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-       <link href="CSS/queryFlowers.css" rel="stylesheet"/>
-        
+        <link href="CSS/queryFlowers.css" rel="stylesheet"/>
+
     </head>
 
     <body>
@@ -24,7 +24,7 @@
                         <label for="minPriceCheck">Set Min Price</label>
 
                         <div class="slider hide" id="minPrice">
-                            RM50<input type="range" min="1" max="100" value="50" name="minPrice" id="minSlider" >RM5000
+                            RM10<input type="range" min="1" max="100" value="50" name="minPrice" id="minSlider" >RM1000
 
                         </div>
 
@@ -36,37 +36,47 @@
                         <label for="maxPriceCheck">Set Max Price</label>
 
                         <div class="slider hide" id="maxPrice">
-                            RM50<input type="range" min="1" max="100" value="50" name="maxPrice" id="maxSlider">RM5000
+                            RM10<input type="range" min="1" max="100" value="50" name="maxPrice" id="maxSlider">RM1000
 
                         </div>
 
                     </div>
                 </div>
-                <input type="submit" value="Search all" id="submitBt"/>
+                <input type="submit" value="Search all" id="submitBt" class="hoverableButton"/>
             </form>
         </div>
     </body>
     <script>
         var minChecked = false;
         var maxChecked = false;
-        var minVal = 2500;
-        var maxVal = 2500;
-        
-        $(document).ready(function(){
+        var minVal = 1000;
+        var maxVal = 1000;
+
+        $(document).ready(function () {
             isChecked();
         });
 
         function isChecked() {
-
-            if (minChecked && maxChecked) {
-                $("#submitBt").prop("value", "Search between RM" + minVal + " and RM" + maxVal);
-            } else if (minChecked) {
-                $("#submitBt").prop("value", "Search over RM" + minVal);
-            } else if (maxChecked) {
-                $("#submitBt").prop("value", "Search below RM" + maxVal);
+            if (minVal > maxVal && minChecked && maxChecked) {
+                // Invalid range
+                $("#submitBt").prop("disabled", true);
+                $("#submitBt").prop("value", "Can't search: Invalid range");
+                $("#submitBt").removeClass("hoverableButton");
             } else {
-                $("#submitBt").prop("value", "Search all");
+                $("#submitBt").prop("disabled", false);
+                $("#submitBt").addClass("hoverableButton");
+                if (minChecked && maxChecked) {
+                    $("#submitBt").prop("value", "Search between RM" + minVal + " and RM" + maxVal);
+                } else if (minChecked) {
+                    $("#submitBt").prop("value", "Search over RM" + minVal);
+                } else if (maxChecked) {
+                    $("#submitBt").prop("value", "Search below RM" + maxVal);
+                } else {
+                    $("#submitBt").prop("value", "Search all");
+                }
             }
+
+
         }
 
         $("#minPriceCheck").change(function () {
@@ -93,12 +103,12 @@
         });
 
         $("#minSlider").mousemove(function () {
-            minVal = 50 * $(this).val();
+            minVal = 10 * $(this).val();
             isChecked();
         });
 
         $("#maxSlider").mousemove(function () {
-            maxVal = 50 * $(this).val();
+            maxVal = 10 * $(this).val();
             isChecked();
         });
 
