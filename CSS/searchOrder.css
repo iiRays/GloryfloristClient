@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Cute Font&display=swap');
+html, body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  background-image: url('https://static.zerochan.net/Hirasawa.Yui.full.785289.jpg');
+  background-repeat: repeat;
+  background-position: center;
+  background-size: cover;
+}
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+  width: 40%;
+}
+#container #heading {
+  font-family: 'Cute Font';
+  color: #fcf8ee;
+  font-size: 60px;
+}
+#container #input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+#container #input #textbox {
+  font-size: 30px;
+  font-family: 'Cute Font';
+  border: none;
+  background-color: rgba(0, 0, 0, 0.25);
+  transition: background-color 0.5s;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 200px;
+  height: 50px;
+  border-radius: 5px;
+  color: #fcf8ee;
+}
+#container #input #textbox:hover {
+  background-color: rgba(252, 248, 238, 0.25);
+}
+#container #input #textbox:focus {
+  background-color: rgba(252, 248, 238, 0.25);
+  outline: none;
+}
+#container #input #button {
+  font-family: 'Cute Font';
+  font-size: 30px;
+  height: 50px;
+  background-color: rgba(243, 181, 177, 0.25);
+  color: #fcf8ee;
+  border: none;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 5px;
+  margin-left: 10px;
+  transition: background-color 0.5s;
+}
+#container #input #button:hover {
+  background-color: rgba(243, 181, 177, 0.5);
+}
+#container #input #button:focus {
+  outline: none;
+  background-color: rgba(243, 181, 177, 0.5);
+}

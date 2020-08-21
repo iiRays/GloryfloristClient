@@ -2,21 +2,21 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <link rel="stylesheet" href="CSS/searchOrder.css">
+        <title>Order Searcher</title>
     </head>
     <body>
-        <?php
-            require_once("Rest.php");
-        
-            $rest = new Rest("http://localhost/GloryFlorist/Controllers/WebServices/searchOrder.php?" . "orderId=1"); // adding query parameter manually to debug
-            $orderData = $rest->getData();
-            
-            if ($rest->getData()) {
-                $orderData = $rest->getData();
-                foreach ($orderData as $orderDetail) {
-                    echo $orderDetail . "<br>";
-                }
-            }
-        ?>
+
+      <form id='container' method='POST' action="searchOrderResults.php">
+
+        <a id='heading'>Find an order by ID</a>
+
+        <div id='input'>
+          <input id='textbox' type='textbox' name='orderId' placeholder='eg. 123'>
+          <input id='button' type='submit' value='Find!'>
+        </div>
+
+      </form>
+
     </body>
 </html>
