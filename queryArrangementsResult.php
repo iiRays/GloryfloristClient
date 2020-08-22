@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <link href="CSS/queryFlowersResult.css" rel="stylesheet"/>
+        <link href="CSS/queryArrangementsResult.css" rel="stylesheet"/>
         <meta charset="UTF-8">
         <title></title>
     </head>

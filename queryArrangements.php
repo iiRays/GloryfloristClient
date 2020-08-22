@@ -4,7 +4,7 @@
 
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <link href="CSS/queryFlowers.css" rel="stylesheet"/>
+        <link href="CSS/queryArrangements.css" rel="stylesheet"/>
 
     </head>
 
@@ -17,7 +17,7 @@
             <h2>
                 Powered by GloryFlorist API
             </h2>
-            <form action="queryFlowersResult.php" method="POST">
+            <form action="queryArrangementsResult.php" method="POST">
                 <div class="filter">
                     <div class="field">
                         <input type="checkbox" id="minPriceCheck"  value="min" name="minPriceCheck" autocomplete='off'/>
