@@ -2,7 +2,7 @@
 
 require_once 'REST.php';
 
-$url = "http://localhost/GloryFlorist/Controllers/WebServices/checkPrice.php";
+$url = "http://localhost/GloryFlorist/Controllers/WebServices/getFlowerArrangement.php";
 
 $rest = new Rest($url);
 
