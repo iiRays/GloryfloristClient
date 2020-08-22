@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="CSS/searchOrderResults.css">
+        <link rel="stylesheet" href="../CSS/searchOrderResults.css">
         <title>Order Searcher Results</title>
     </head>
     <body>
@@ -64,7 +64,7 @@
                             if ($arrangementRest->getData()) {
                                 $arrangementData = $arrangementRest->getData();
 
-                                echo $orderItem->quantity." ".$arrangementData->name."<br>";
+                                echo $orderItem->quantity."x ".$arrangementData->name."<br>";
                             }
                         }
 

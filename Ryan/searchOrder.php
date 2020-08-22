@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="CSS/searchOrder.css">
+        <link rel="stylesheet" href="../CSS/searchOrder.css">
         <title>Order Searcher</title>
     </head>
     <body>
