@@ -28,6 +28,7 @@ class Rest {
         $this->status = $this->response->status;
         $this->hasData = $this->response->hasData;
         $this->data = $this->response->data;
+        
     }
     
     // Getters and setters
