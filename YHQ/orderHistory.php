@@ -32,7 +32,7 @@ $itemUrl = "orderHistory.php?id=";
                     '</div>' .
                     '<div class="label">' .
                     '<label class="name">Name : ' . $orderhistory->name . '</label><br />' .
-                    '<label class="name">Price : ' . $orderhistory->price . '</label><br />' .
+                    '<label class="name">Price : RM ' . $orderhistory->price . '</label><br />' .
                     '<label class="name">Stalks : ' . $orderhistory->stalks . '</label><br />' .
                     '</div>' .
                     '</div>' .
