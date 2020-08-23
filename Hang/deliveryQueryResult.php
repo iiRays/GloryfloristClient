@@ -22,7 +22,14 @@ and open the template in the editor.
                 require_once("Rest.php");
                 $rest = new Rest("http://localhost/gloryflorist/Controllers/WebServices/queryDelivery.php?start=" . $start . "&end=" . $end);
 
-                echo "<table border='1'>
+                $array = (array) $rest->getData();
+                if (count($array) == 0) {
+
+                    echo "<p>NO RECORDS FOUND</p>";
+                    
+                    
+                } else {
+                    echo "<table border='1'>
                     <tr>
                         <th>Id</th>
                         <th>Sender</th>
@@ -39,27 +46,27 @@ and open the template in the editor.
                         <th>Postcode</th>
                         <th>Delivery fee</th>                       
                     </tr>";
-                $array = (array) $rest->getData();
-                foreach ($array as $a) {
+                    foreach ($array as $a) {
 
-                    echo "<tr>";
-                    echo "<td>" . $a->id . "</td>"
-                    . "<td>" . $a->sender . "</td>"
-                    . "<td>" . $a->sendercontact . "</td>"
-                    . "<td>" . $a->recipient . "</td>"
-                    . "<td>" . $a->recipientcontact . "</td>"
-                    . "<td>" . $a->method . "</td>"
-                    . "<td>" . $a->date . "</td>"
-                    . "<td>" . $a->timeslot . "</td>"
-                    . "<td>" . $a->address . "</td>"
-                    . "<td>" . $a->company . "</td>"
-                    . "<td>" . $a->asset_type . "</td>"
-                    . "<td>" . $a->city_town . "</td>"
-                    . "<td>" . $a->postcode . "</td>"
-                    . "<td>" . $a->deliveryfee . "</td>";
-                    echo "</tr>";
+                        echo "<tr>";
+                        echo "<td>" . $a->id . "</td>"
+                        . "<td>" . $a->sender . "</td>"
+                        . "<td>" . $a->sendercontact . "</td>"
+                        . "<td>" . $a->recipient . "</td>"
+                        . "<td>" . $a->recipientcontact . "</td>"
+                        . "<td>" . $a->method . "</td>"
+                        . "<td>" . $a->date . "</td>"
+                        . "<td>" . $a->timeslot . "</td>"
+                        . "<td>" . $a->address . "</td>"
+                        . "<td>" . $a->company . "</td>"
+                        . "<td>" . $a->asset_type . "</td>"
+                        . "<td>" . $a->city_town . "</td>"
+                        . "<td>" . $a->postcode . "</td>"
+                        . "<td>" . $a->deliveryfee . "</td>";
+                        echo "</tr>";
+                    }
+                    echo "</table>";
                 }
-                echo "</table>";
             }
             ?></div>
     </body>
