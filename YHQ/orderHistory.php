@@ -1,5 +1,4 @@
 <?php
-
 require_once 'Rest.php';
 
 $url = "http://localhost/GloryFlorist/Controllers/WebServices/orderHistory.php";
@@ -24,19 +23,24 @@ $itemUrl = "orderHistory.php?id=";
             <div id="content">
 
                 <?php
-                foreach ($rest->getData() as $orderhistory) {
-                    echo '<a href="' . $itemUrl . $orderhistory->id . '">' .
-                    '<div class="item">' .
-                    '<div class="img">' .
-                    '<img id="img" name="img" src=" ' . $orderhistory->img . ' ">' .
-                    '</div>' .
-                    '<div class="label">' .
-                    '<label class="name">Name : ' . $orderhistory->name . '</label><br />' .
-                    '<label class="name">Price : RM ' . $orderhistory->price . '</label><br />' .
-                    '<label class="name">Stalks : ' . $orderhistory->stalks . '</label><br />' .
-                    '</div>' .
-                    '</div>' .
-                    '</a>';
+                if ($rest->getData()) {
+
+                    foreach ($rest->getData() as $orderhistory) {
+                        echo '<a href="' . $itemUrl . $orderhistory->id . '">' .
+                        '<div class="item">' .
+                        '<div class="img">' .
+                        '<img id="img" name="img" src=" ' . $orderhistory->img . ' ">' .
+                        '</div>' .
+                        '<div class="label">' .
+                        '<label class="name">Name : ' . $orderhistory->name . '</label><br />' .
+                        '<label class="name">Price : RM ' . $orderhistory->price . '</label><br />' .
+                        '<label class="name">Stalks : ' . $orderhistory->stalks . '</label><br />' .
+                        '</div>' .
+                        '</div>' .
+                        '</a>';
+                    }
+                } else {
+                    echo "no purchases yet";
                 }
                 ?>
             </div>
