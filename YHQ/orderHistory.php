@@ -18,7 +18,6 @@ $itemUrl = "orderHistory.php?id=";
         <div id="container">
             <div id="top">
                 <label id="title">Recent Purchases</label>
-                <label>Powered by GloryFlorist API</label>
             </div>
             <div id="content">
 
