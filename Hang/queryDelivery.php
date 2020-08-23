@@ -12,7 +12,7 @@ Author: kelvin tham yit hang
     <body>
         <div id="container">
             <h1 class="content">Delivery Info Web Service Client </h1>
-            <h2 class="content">Powered by Glory Florist</h2>
+            <h2 class="content">Powered by Glory Florist API</h2>
             <form method="post" action="deliveryQueryResult.php">
                 <div class="content">
                     <p>Select date range and click "go" to view </p>
