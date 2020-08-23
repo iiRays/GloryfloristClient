@@ -25,19 +25,25 @@ $itemUrl = "orderHistory.php?id=";
                 <?php
                 if ($rest->getData()) {
 
-                    foreach ($rest->getData() as $orderhistory) {
-                        echo '<a href="' . $itemUrl . $orderhistory->id . '">' .
-                        '<div class="item">' .
-                        '<div class="img">' .
-                        '<img id="img" name="img" src=" ' . $orderhistory->img . ' ">' .
-                        '</div>' .
-                        '<div class="label">' .
-                        '<label class="name">Name : ' . $orderhistory->name . '</label><br />' .
-                        '<label class="name">Price : RM ' . $orderhistory->price . '</label><br />' .
-                        '<label class="name">Stalks : ' . $orderhistory->stalks . '</label><br />' .
-                        '</div>' .
-                        '</div>' .
-                        '</a>';
+                    foreach ($rest->getData() as $orderitem) {
+                        $arrangementRest = new Rest("http://localhost/GloryFlorist/Controllers/WebServices/searchArrangement.php?arrangementId=" . $orderitem->arragement);
+                        if ($arrangementRest->getData()) {
+                            $arrangementData = $arrangementRest->getData();
+
+                            echo '<a href="' . $itemUrl . $arrangementData->id . '">' .
+                            '<div class="item">' .
+                            '<div class="img">' .
+                            '<img id="img" name="img" src=" ' . $arrangementData->image_url . ' ">' .
+                            '</div>' .
+                            '<div class="label">' .
+                            '<label class="name">Name : ' . $arrangementData->name . '</label><br />' .
+                            '<label class="name">Price : RM ' . $arrangementData->price . '</label><br />' .
+                            '<label class="name">Stalks : ' . $arrangementData->stalks . '</label><br />' .
+                            '<label class="name">Quantity : ' . $orderitem->quantity . '</label><br />' .
+                            '</div>' .
+                            '</div>' .
+                            '</a>';
+                        }
                     }
                 } else {
                     echo "no purchases yet";
