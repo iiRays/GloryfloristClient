@@ -4,7 +4,6 @@ class Rest {
 
     private $response;
     private $status;
-    private $hasData;
     private $data;
 
     public function __construct($url) {
@@ -12,7 +11,6 @@ class Rest {
         curl_setopt($client, CURLOPT_RETURNTRANSFER, true); 
         $this->response = json_decode(curl_exec($client)); 
         $this->status = $this->response->status;
-        $this->hasData = $this->response->hasData;
         $this->data = $this->response->data;
         
     }
@@ -27,10 +25,6 @@ class Rest {
         return $this->status;
     }
 
-    function getHasData() {
-        return $this->hasData;
-    }
-
     function getData() {
         return $this->data;
     }
@@ -41,10 +35,6 @@ class Rest {
 
     function setStatus($status) {
         $this->status = $status;
-    }
-
-    function setHasData($hasData) {
-        $this->hasData = $hasData;
     }
 
     function setData($data) {
