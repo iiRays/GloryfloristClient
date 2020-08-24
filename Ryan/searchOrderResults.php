@@ -16,14 +16,14 @@
         <a id='heading'>Order Searcher results</a>
         
         <?php
-            require_once("Rest.php");
+            require_once("RestUtil.php");
             
             if (!isset($_POST["orderId"])) {
                 echo "<a id='info'>No order with a matching ID was found ಠ_ಠ</a>";
             } else {
                 $orderId = $_POST["orderId"];
                 
-                $rest = new Rest("http://localhost/GloryFlorist/Controllers/WebServices/searchOrder.php?orderId=".$orderId); // adding query parameter manually to debug
+                $rest = new RestUtil("http://localhost/GloryFlorist/Controllers/WebServices/searchOrder.php?orderId=".$orderId); // adding query parameter manually to debug
                 $orderDetails = $rest->getData();
                 $labels = ["ID", "CUSTOMER ID", "GRAND TOTAL", "STATUS"];
 
@@ -51,7 +51,7 @@
                         $i++;
                     }
 
-                    $itemRest = new Rest("http://localhost/GloryFlorist/Controllers/WebServices/searchOrderItems.php?orderId=".$orderId);
+                    $itemRest = new RestUtil("http://localhost/GloryFlorist/Controllers/WebServices/searchOrderItems.php?orderId=".$orderId);
 
                     if ($itemRest->getData()) {
                         $orderItems = $itemRest->getData();
@@ -61,7 +61,7 @@
                                 <a class='value' style='font-size: 25px; line-height: 20px;'>";
 
                         foreach ($orderItems as $orderItem) {
-                            $arrangementRest = new Rest("http://localhost/GloryFlorist/Controllers/WebServices/searchArrangement.php?arrangementId=".$orderItem->arrangement_id);
+                            $arrangementRest = new RestUtil("http://localhost/GloryFlorist/Controllers/WebServices/searchArrangement.php?arrangementId=".$orderItem->arrangement_id);
 
                             if ($arrangementRest->getData()) {
                                 $arrangementData = $arrangementRest->getData();
