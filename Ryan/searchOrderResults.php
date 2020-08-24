@@ -25,7 +25,7 @@
                 
                 $rest = new Rest("http://localhost/GloryFlorist/Controllers/WebServices/searchOrder.php?orderId=".$orderId); // adding query parameter manually to debug
                 $orderDetails = $rest->getData();
-                $labels = ["ID", "CUSTOMER ID", "GRAND TOTAL", "DELIVERY ADDRESS", "STATUS", "TARGET DATE"];
+                $labels = ["ID", "CUSTOMER ID", "GRAND TOTAL", "STATUS"];
 
                 if ($rest->getData()) {
                     $orderData = $rest->getData();
@@ -35,7 +35,9 @@
                     $i = 0;
                     foreach ($orderData as $orderDetail) {
                         
-                        if ($i == 2) {
+                        if ($i == 4) {
+                            // display nothing
+                        } else if ($i == 2) {
                             echo "<div class='item'>
                                 <a class='label'>".$labels[$i]."</a>
                                 <a class='value'>RM ".$orderDetail."</a>
